@@ -1,4 +1,4 @@
-package com.saulloguilherme.ocr_api.config;
+package com.saulloguilherme.ocr_api.kafka.config;
 
 import org.apache.kafka.clients.admin.AdminClientConfig;
 import org.apache.kafka.clients.admin.NewTopic;

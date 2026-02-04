@@ -1,4 +1,4 @@
-package com.saulloguilherme.ocr_api.config;
+package com.saulloguilherme.ocr_api.kafka.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.kafka.autoconfigure.KafkaProperties;

@@ -1,10 +1,10 @@
-package com.saulloguilherme.ocr_api.producer;
+package com.saulloguilherme.ocr_api.kafka.producer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 
-public class OcrRequest {
+public class OcrProducer {
 
     @Value("${topic.ocr.requests}")
     private String OcrRequestTopic;
