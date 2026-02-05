@@ -17,7 +17,10 @@ public class KafkaTopicConfig {
     private String bootstrapAddress;
 
     @Value("${topic.ocr.requests}")
-    private String topic;
+    private String ocrRequests;
+
+    @Value("${topic.ocr.results}")
+    private String ocrResults;
 
     @Bean
     public KafkaAdmin kafkaAdmin() {
@@ -27,8 +30,13 @@ public class KafkaTopicConfig {
     }
 
     @Bean
-    public NewTopic newTopic() {
-        return new NewTopic(topic, 1, (short) 1);
+    public NewTopic ocrRequests() {
+        return new NewTopic(ocrRequests, 1, (short) 1);
+    }
+
+    @Bean
+    public NewTopic ocrResults() {
+        return new NewTopic(ocrResults, 1, (short) 1);
     }
 
 }
