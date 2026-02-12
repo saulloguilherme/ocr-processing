@@ -20,10 +20,9 @@ public class InvoiceController {
     @Autowired
     private InvoiceService invoiceService;
 
-
     @PostMapping
     public ResponseEntity<String> sendFile(@Valid @RequestParam("file") MultipartFile file) {
-        invoiceService.processInvoice(file); // 202, 400
+        return invoiceService.processInvoice(file); // 202, 400
     }
 
     @GetMapping

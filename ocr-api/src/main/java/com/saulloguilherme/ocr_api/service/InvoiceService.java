@@ -5,6 +5,7 @@ import com.saulloguilherme.ocr_api.kafka.dto.InvoiceEventResponse;
 import com.saulloguilherme.ocr_api.kafka.producer.OcrProducer;
 import com.saulloguilherme.ocr_api.repository.InvoiceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -22,14 +23,12 @@ public class InvoiceService {
     @Autowired
     private OcrProducer ocrProducer;
 
-    public void processInvoice(MultipartFile file) {
+    public ResponseEntity<> processInvoice(MultipartFile file) {
         try {
-            String path = minioService.save(file);
+            String path = minioService.save(file); // minio error
             InvoiceEventRequest request = new InvoiceEventRequest();
             request.setStoragePath(path);
             createEvent(request);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
         }
     }
 
