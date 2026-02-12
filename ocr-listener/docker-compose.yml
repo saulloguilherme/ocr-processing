@@ -1,0 +1,14 @@
+networks:
+  ocr-network:
+    external: true
+
+services:
+  ocr-listener:
+    build: .
+    networks:
+      - ocr-network
+    environment:
+      MINIO_ENDPOINT: http://minio:9000
+      MINIO_ACCESS_KEY: minioadmin
+      MINIO_SECRET_KEY: minioadmin
+      KAFKA_BOOTSTRAP_SERVERS: kafka:29092
