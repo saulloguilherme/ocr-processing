@@ -11,4 +11,8 @@ services:
       MINIO_ENDPOINT: http://minio:9000
       MINIO_ACCESS_KEY: minioadmin
       MINIO_SECRET_KEY: minioadmin
+      MINIO_BUCKET: invoice-bucket
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:29092
       KAFKA_BOOTSTRAP_SERVERS: kafka:29092
+      TESSERACT_DATA_PATH: /usr/share/tesseract-ocr/5/tessdata/
+      TESSERACT_LANGUAGE: por
