@@ -37,4 +37,9 @@ public class KafkaProducerConfig {
         properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JacksonJsonSerializer.class);
         return new DefaultKafkaProducerFactory<>(properties);
     }
+
+    @Bean
+    public KafkaTemplate<String, InvoiceEventRequest> invoiceKafkaTemplate() {
+        return new KafkaTemplate<>(invoiceProducerFactory());
+    }
 }
