@@ -19,4 +19,8 @@ public class InvoiceEventResponse {
     private List<ProductResponse> products;
     private BigDecimal totalValue;
 
+    public InvoiceEventResponse(UUID uuid) {
+        this.uuid = uuid;
+    }
+
 }
