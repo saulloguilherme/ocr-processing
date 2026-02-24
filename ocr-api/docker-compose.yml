@@ -29,11 +29,13 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/ocrdb
       SPRING_DATASOURCE_USERNAME: ocruser
       SPRING_DATASOURCE_PASSWORD: ocrpass
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
       MINIO_ENDPOINT: http://minio:9000
       MINIO_ACCESS_KEY: minioadmin
       MINIO_SECRET_KEY: minioadmin
       MINIO_BUCKET: invoice-bucket
       KAFKA_BOOTSTRAP_SERVERS: kafka:29092
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:29092
 
 volumes:
   postgres-data:
