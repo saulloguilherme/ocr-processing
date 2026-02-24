@@ -1,6 +1,6 @@
 package com.saulloguilherme.ocr_api.kafka.dto;
 
-import com.saulloguilherme.ocr_api.dto.ProductResponse;
+import com.saulloguilherme.ocr_api.model.Product;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,7 +16,7 @@ public class InvoiceEventResponse {
 
     private UUID uuid;
     private String parsedText;
-    private List<ProductResponse> products;
+    private List<Product> products;
     private BigDecimal totalValue;
 
 }
