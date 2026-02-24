@@ -16,6 +16,20 @@ services:
       MINIO_ROOT_USER: minioadmin
       MINIO_ROOT_PASSWORD: minioadmin
 
+  minio-create-bucket:
+    image: minio/mc
+    depends_on:
+      - minio
+    networks:
+      - ocr-network
+    entrypoint: >
+      /bin/sh -c "
+        until (/usr/bin/mc alias set myminio http://minio:9000 minioadmin minioadmin) do echo '...aguardando minio' && sleep 1; done;
+        /usr/bin/mc mb myminio/invoice-bucket --ignore-existing;
+        echo 'Bucket criado com sucesso';
+        exit 0;
+      "
+
   kafka:
     image: confluentinc/cp-kafka:7.7.7
     depends_on:
