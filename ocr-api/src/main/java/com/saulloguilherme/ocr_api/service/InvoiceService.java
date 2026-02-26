@@ -38,6 +38,7 @@ public class InvoiceService {
         this.createEvent(request);
 
         Invoice invoice = new Invoice();
+        invoice.setUuid(UUID.randomUUID());
         invoice.setStoragePath(path);
         invoice.setStatus(OcrStatus.PROCESSING);
         invoice.setCreatedAt(Timestamp.from(Instant.now()));

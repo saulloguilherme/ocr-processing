@@ -10,7 +10,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.UUID;
 
-@RestController("/invoice")
+@RestController
+@RequestMapping("/invoice")
 public class InvoiceController {
 
     @Autowired
@@ -21,7 +22,7 @@ public class InvoiceController {
         return invoiceService.processInvoice(file); // 202, 400
     }
 
-    @GetMapping
+    @GetMapping("/{uuid}")
     public ResponseEntity<InvoiceResponseDTO> getInvoice(@Valid @PathVariable UUID uuid) {
         return invoiceService.getInvoice(uuid); // 200, 404
     }
