@@ -22,6 +22,9 @@ public class KafkaTopicConfig {
     @Value("${topic.ocr.results}")
     private String ocrResults;
 
+    @Value("${topic.ocr.requests.dlt}")
+    private String ocrRequestsDlt;
+
     @Bean
     public KafkaAdmin kafkaAdmin() {
         Map<String, Object> config = new HashMap<>();
@@ -37,6 +40,11 @@ public class KafkaTopicConfig {
     @Bean
     public NewTopic ocrResults() {
         return new NewTopic(ocrResults, 1, (short) 1);
+    }
+
+    @Bean
+    public NewTopic ocrRequestsDlt() {
+        return new NewTopic(ocrRequestsDlt, 1, (short) 1);
     }
 
 }

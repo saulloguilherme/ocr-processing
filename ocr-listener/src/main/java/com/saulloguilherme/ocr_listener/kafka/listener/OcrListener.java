@@ -1,6 +1,6 @@
 package com.saulloguilherme.ocr_listener.kafka.listener;
 
-import com.saulloguilherme.ocr_listener.kafka.dto.InvoiceEventRequest;
+import com.saulloguilherme.common.dto.InvoiceEventRequest;
 import com.saulloguilherme.ocr_listener.service.InvoiceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
