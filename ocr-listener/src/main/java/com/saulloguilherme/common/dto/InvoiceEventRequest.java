@@ -1,4 +1,4 @@
-package com.saulloguilherme.ocr_listener.kafka.dto;
+package com.saulloguilherme.common.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

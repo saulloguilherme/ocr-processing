@@ -1,4 +1,4 @@
-package com.saulloguilherme.ocr_api.kafka.dto;
+package com.saulloguilherme.common.dto;
 
 import com.saulloguilherme.ocr_api.model.Product;
 import lombok.AllArgsConstructor;

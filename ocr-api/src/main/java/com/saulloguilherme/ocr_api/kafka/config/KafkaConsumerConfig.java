@@ -1,6 +1,6 @@
 package com.saulloguilherme.ocr_api.kafka.config;
 
-import com.saulloguilherme.ocr_api.kafka.dto.InvoiceEventResponse;
+import com.saulloguilherme.common.dto.InvoiceEventResponse;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.kafka.autoconfigure.KafkaProperties;

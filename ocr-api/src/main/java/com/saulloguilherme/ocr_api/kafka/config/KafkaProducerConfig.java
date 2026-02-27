@@ -1,6 +1,6 @@
 package com.saulloguilherme.ocr_api.kafka.config;
 
-import com.saulloguilherme.ocr_api.kafka.dto.InvoiceEventRequest;
+import com.saulloguilherme.common.dto.InvoiceEventRequest;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.kafka.autoconfigure.KafkaProperties;
@@ -10,7 +10,6 @@ import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
 import org.springframework.kafka.support.serializer.JacksonJsonSerializer;
-import org.springframework.kafka.support.serializer.JsonSerializer;
 
 import java.util.Map;
 

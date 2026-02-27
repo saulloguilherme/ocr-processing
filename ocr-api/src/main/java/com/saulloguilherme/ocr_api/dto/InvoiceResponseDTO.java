@@ -25,7 +25,6 @@ public class InvoiceResponseDTO  {
     private List<Product> products;
     private BigDecimal totalValue;
     private Timestamp updatedAt;
-    private String imageUrl;
 
     public InvoiceResponseDTO(UUID uuid, @NotNull Timestamp createdAt, OcrStatus status) {
         this.uuid = uuid;
