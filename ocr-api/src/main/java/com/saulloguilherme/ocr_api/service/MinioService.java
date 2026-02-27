@@ -45,21 +45,4 @@ public class MinioService {
         return name;
     }
 
-    public String getPresignedUrl(String objectName, int expiryInSeconds) {
-        try {
-            minioClient.getPresignedObjectUrl(
-                    GetPresignedObjectUrlArgs.builder()
-                            .bucket(bucket)
-                            .object(objectName)
-                            .method(Method.GET)
-                            .expiry(expiryInSeconds)
-                            .build()
-            );
-        } catch (Exception e) {
-            throw new BadRequestException("Falha ao encontrar arquivo no MinIO");
-        }
-
-        return "";
-    }
-
 }
