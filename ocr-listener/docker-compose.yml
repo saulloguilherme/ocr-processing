@@ -14,5 +14,5 @@ services:
       MINIO_BUCKET: invoice-bucket
       SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:29092
       KAFKA_BOOTSTRAP_SERVERS: kafka:29092
-      TESSERACT_DATA_PATH: /usr/share/tesseract-ocr/5/tessdata/
+      TESSERACT_DATA_PATH: /usr/share/tesseract-ocr/4.00/tessdata/
       TESSERACT_LANGUAGE: por
