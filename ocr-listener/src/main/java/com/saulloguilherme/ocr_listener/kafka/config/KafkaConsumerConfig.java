@@ -60,7 +60,7 @@ public class KafkaConsumerConfig {
         }
 
         @Bean
-        public DefaultErrorHandler errorHandler(KafkaTemplate<Object, Object> template) {
+        public DefaultErrorHandler errorHandler(KafkaTemplate<String, InvoiceEventRequest> template) {
 
             DeadLetterPublishingRecoverer recoverer = new DeadLetterPublishingRecoverer(template,
                             (record, ex) -> new TopicPartition(

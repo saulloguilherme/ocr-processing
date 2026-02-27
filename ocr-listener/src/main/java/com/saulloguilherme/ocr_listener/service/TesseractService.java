@@ -28,15 +28,8 @@ public class TesseractService {
                     original.getHeight(),
                     BufferedImage.TYPE_BYTE_GRAY
             );
-            gray.getGraphics().drawImage(original, 0, 0, null);
 
-            for (int y = 0; y < gray.getHeight(); y++) {
-                for (int x = 0; x < gray.getWidth(); x++) {
-                    int pixel = gray.getRaster().getSample(x, y, 0);
-                    int newPixel = pixel < 128 ? 0 : 255;
-                    gray.getRaster().setSample(x, y, 0, newPixel);
-                }
-            }
+            gray.getGraphics().drawImage(original, 0, 0, null);
 
             ITesseract tesseract = new Tesseract();
             tesseract.setDatapath(tessDataPath);
@@ -53,6 +46,5 @@ public class TesseractService {
             throw new RuntimeException(e);
         }
     }
-
 
 }

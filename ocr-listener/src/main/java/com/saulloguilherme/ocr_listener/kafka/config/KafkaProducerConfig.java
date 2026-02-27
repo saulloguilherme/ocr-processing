@@ -1,5 +1,6 @@
 package com.saulloguilherme.ocr_listener.kafka.config;
 
+import com.saulloguilherme.common.dto.InvoiceEventRequest;
 import com.saulloguilherme.common.dto.InvoiceEventResponse;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,5 +41,18 @@ public class KafkaProducerConfig {
     @Bean
     public KafkaTemplate<String, InvoiceEventResponse> invoiceKafkaTemplate() {
         return new KafkaTemplate<>(invoiceProducerFactory());
+    }
+
+    @Bean
+    public ProducerFactory<String, InvoiceEventRequest> invoiceRequestProducerFactory() {
+        Map<String, Object> properties = kafkaProperties.buildProducerProperties();
+        properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JacksonJsonSerializer.class);
+
+        return new DefaultKafkaProducerFactory<>(properties);
+    }
+
+    @Bean
+    public KafkaTemplate<String, InvoiceEventRequest> invoiceRequestKafkaTemplate() {
+        return new KafkaTemplate<>(invoiceRequestProducerFactory());
     }
 }

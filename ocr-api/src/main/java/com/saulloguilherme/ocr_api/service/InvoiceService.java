@@ -86,5 +86,15 @@ public class InvoiceService {
         invoiceRepository.save(invoice);
     }
 
+    public void processDlqEvent(InvoiceEventRequest event) {
+        UUID uuid = event.getUuid();
 
+        Invoice invoice = invoiceRepository.findById(uuid).orElseThrow(
+                () -> new NotFoundException("Não foi possível encontrar nenhuma nota fiscal com o identificador enviado."));
+
+        invoice.setStatus(OcrStatus.FAILED);
+        invoice.setUpdatedAt(Timestamp.from(Instant.now()));
+
+        this.save(invoice);
+    }
 }
